@@ -6,3 +6,28 @@ Currently, two official plugins are available:
 
 - [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+## Backup App Component
+
+```jsx
+function App() {
+  return (
+    <>
+      <div className='min-h-screen flex flex-column surface-ground'>
+        {/* Navbar  */}
+        <Navbar />
+        {/* Content Goes Here like Outlet */}
+        <div className='flex flex-column flex-auto'>
+          <div className='border-2 border-dashed surface-border border-round surface-section ' />
+          <Home />
+        </div>
+        <Footer />
+      </div>
+
+      {/* <Navbar />
+      <Home />
+      <Footer /> */}
+    </>
+  );
+}
+```
