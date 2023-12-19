@@ -6,6 +6,7 @@ import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Posts from './pages/Posts';
+import ErrorPage from './components/ErrorPage';
 
 const AppLayout = () => {
   return (
@@ -30,6 +31,7 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <AppLayout />,
+    errorElement: <ErrorPage />,
     children: [
       {
         path: '/posts',
