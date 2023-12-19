@@ -1,12 +1,8 @@
-import { useState } from 'react';
+import React from 'react';
 
-import Home from './pages/Home';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-
-function App() {
+export default function Navbar() {
   return (
-    <>
+    <div>
       <div className='min-h-screen flex flex-column surface-ground'>
         <div className='surface-overlay py-3 px-6 flex align-items-center justify-content-between relative lg:static'>
           <img
@@ -175,17 +171,9 @@ function App() {
         </div>
         {/* Content Goes Here like Outlet */}
         <div className='flex flex-column flex-auto'>
-          <div className='border-2 border-dashed surface-border border-round surface-section ' />
-          <Home />
+          <div className='border-2 border-dashed surface-border border-round surface-section flex-auto' />
         </div>
-        <Footer />
       </div>
-
-      {/* <Navbar />
-      <Home />
-      <Footer /> */}
-    </>
+    </div>
   );
 }
-
-export default App;
