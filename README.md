@@ -50,3 +50,11 @@ function App() {
   </div>
 </div>
 ```
+
+## Print the date {JSON.stringify(date)}
+
+```jsx
+{
+  JSON.stringify(date);
+}
+```

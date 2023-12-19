@@ -7,6 +7,8 @@ import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Posts from './pages/Posts';
 import ErrorPage from './components/ErrorPage';
+import GroupLayout from './pages/GroupLayout';
+import QuillEditor from './components/QuillEditor';
 
 const AppLayout = () => {
   return (
@@ -18,7 +20,6 @@ const AppLayout = () => {
         <div className='flex flex-column flex-auto'>
           <div className='border-2 border-dashed surface-border border-round surface-section ' />
           {/* Render All Children Route */}
-
           <Outlet />
         </div>
         <Footer />
@@ -37,6 +38,10 @@ const router = createBrowserRouter([
         path: '/posts',
         element: <Posts />,
       },
+      {
+        path: '/quill',
+        element: <QuillEditor />,
+      },
     ],
   },
   {
@@ -46,6 +51,10 @@ const router = createBrowserRouter([
   {
     path: '/signup',
     element: <Signup />,
+  },
+  {
+    path: '/grouplayout',
+    element: <GroupLayout />,
   },
 ]);
 
