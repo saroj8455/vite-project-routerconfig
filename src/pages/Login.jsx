@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { ReactDocsUrl } from '../common/CommonItem';
-
+import { Button } from 'primereact/button';
+import { Checkbox } from 'primereact/checkbox';
 export default function Login() {
+  const [checked, setChecked] = useState(false);
   return (
-    <div className='flex'>
+    <div className='min-h-screen w-full flex'>
       <div className='surface-section w-full md:w-6 p-6 md:p-8'>
         <div className='mb-5'>
           <img
@@ -43,28 +45,24 @@ export default function Login() {
             className='p-inputtext p-component w-full mb-3'
           />
           <div className='flex align-items-center justify-content-between mb-6'>
-            <div className='flex align-items-center'>
-              <div id='rememberme2' className='p-checkbox p-component mr-2'>
-                <div className='p-hidden-accessible'>
-                  <input type='checkbox' />
-                </div>
-                <div className='p-checkbox-box' />
-              </div>
-              <label htmlFor='rememberme2'>Remember me</label>
+            <div className='card flex justify-content-center'>
+              <Checkbox
+                inputId='ingredient1'
+                onChange={(e) => setChecked(e.checked)}
+                checked={checked}
+              ></Checkbox>
+              <label htmlFor='ingredient1' className='ml-2'>
+                Remember me
+              </label>
             </div>
+
             <a className='font-medium no-underline ml-2 text-blue-500 text-right cursor-pointer'>
               Forgot your password?
             </a>
           </div>
-          <button aria-label='Sign In' className='p-button p-component w-full'>
-            <span className='p-button-icon p-c p-button-icon-left pi pi-user' />
-            <span className='p-button-label p-c'>Sign In</span>
-            <span
-              role='presentation'
-              className='p-ink'
-              style={{ height: 409, width: 409 }}
-            />
-          </button>
+          <div className='card flex justify-content-center'>
+            <Button className='w-full' label='Sign In' icon='pi pi-user' />
+          </div>
         </div>
       </div>
       <div
@@ -72,6 +70,7 @@ export default function Login() {
         style={{
           backgroundImage:
             'url("https://blocks.primereact.org/demo/images/blocks/signin/signin.jpg")',
+          backgroundPosition: 'center',
         }}
       />
     </div>

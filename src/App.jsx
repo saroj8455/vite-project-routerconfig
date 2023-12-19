@@ -17,6 +17,7 @@ const AppLayout = () => {
         <div className='flex flex-column flex-auto'>
           <div className='border-2 border-dashed surface-border border-round surface-section ' />
           {/* Render All Children Route */}
+
           <Outlet />
         </div>
         <Footer />
