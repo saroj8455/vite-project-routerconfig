@@ -1,17 +1,13 @@
 import { useState } from 'react';
-import { createBrowserRouter, RouterProvider } from 'react-router-dom';
+import { createBrowserRouter, Outlet, RouterProvider } from 'react-router-dom';
 import Home from './pages/Home';
+import Signup from './pages/Signup';
+import Login from './pages/Login';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import Posts from './pages/Posts';
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <div>Hello world!</div>,
-  },
-]);
-
-function App() {
+const AppLayout = () => {
   return (
     <>
       <div className='min-h-screen flex flex-column surface-ground'>
@@ -20,10 +16,40 @@ function App() {
         {/* Content Goes Here like Outlet */}
         <div className='flex flex-column flex-auto'>
           <div className='border-2 border-dashed surface-border border-round surface-section ' />
-          <RouterProvider router={router} />
+          {/* Render All Children Route */}
+          <Outlet />
         </div>
         <Footer />
       </div>
+    </>
+  );
+};
+
+const router = createBrowserRouter([
+  {
+    path: '/',
+    element: <AppLayout />,
+    children: [
+      {
+        path: '/posts',
+        element: <Posts />,
+      },
+    ],
+  },
+  {
+    path: '/login',
+    element: <Login />,
+  },
+  {
+    path: '/signup',
+    element: <Signup />,
+  },
+]);
+
+function App() {
+  return (
+    <>
+      <RouterProvider router={router} />
     </>
   );
 }
